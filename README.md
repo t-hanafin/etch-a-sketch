@@ -6,5 +6,3 @@ images. In several colours.
 The skills I will have demonstrated once I have completed this project 
 include... beginner CSS, beginner javascript, beginner HTML, and some 
 facility with Git. 
-
-
