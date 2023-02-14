@@ -1,4 +1,4 @@
-let num = 8;
+let num = parseInt(prompt("Grid size, please"));
 let gridSize;
 
 switch(num) {
@@ -62,17 +62,26 @@ switch(num) {
         gridSize = 12;
 }
 
-const gridContainer = document.querySelector('.grid-container')
+const gridContainer = document.querySelector('.grid-container');
 
 function gridGenerator(num) {
     for (let i = 1; i <= num ** 2; i++) {
         let gridSquare = document.createElement('div')
         gridSquare.setAttribute('class','grid-item')
-//        gridSquare.textContent = `${i}`
+        gridSquare.textContent = `${i}`
         gridSquare.style.cssText += `flex: 0 ${gridSize}%`;
         gridContainer.appendChild(gridSquare)
+
+        gridSquare.addEventListener('mouseover', event => {
+            console.log("Mouse in");
+            gridSquare.style.cssText += "background-color: black";
+        });
+        gridSquare.addEventListener("mouseout", event => {
+            console.log("Mouse out");
+        })
+
     }
 }
 
-
 gridGenerator(num);
+
