@@ -2,13 +2,19 @@ let num;
 let gridSize;
 
 function getSize() {
-    gridContainer.innerHTML = "";
     num = parseInt(prompt("Grid size, please"));
-    getGridSize(num);
+    gridContainer.innerHTML = "";
+    setGridSize(num);
     gridGenerator(num);
 }
 
-function getGridSize(num) {
+function setGridSize(num) {
+//    gridSize = (parseInt(Math.floor((((gridContainer.offsetWidth)) / num))));
+    gridSize = gridContainer.offsetWidth / num;
+    console.log(gridSize);
+
+
+/* 
     switch(num) {
         case 0:
             break;
@@ -69,7 +75,13 @@ function getGridSize(num) {
         default:
             gridSize = 12;
     }
+
+ */
+
+
 }
+
+
 
 
 
@@ -79,16 +91,16 @@ function gridGenerator(num) {
     for (let i = 1; i <= num ** 2; i++) {
         let gridSquare = document.createElement('div')
         gridSquare.setAttribute('class','grid-item')
-        gridSquare.textContent = `${i}`
-        gridSquare.style.cssText += `flex: 0 ${gridSize}%`;
+//        gridSquare.textContent = `${i}`
+        gridSquare.style.cssText += `flex: 0 ${gridSize}px;width:${gridSize}`;
         gridContainer.appendChild(gridSquare)
 
         gridSquare.addEventListener('mouseover', event => {
-            console.log("Mouse in");
+//            console.log("Mouse in");
             gridSquare.style.cssText += "background-color: black";
         });
         gridSquare.addEventListener("mouseout", event => {
-            console.log("Mouse out");
+//            console.log("Mouse out");
         })
     }
 }
