@@ -1,21 +1,21 @@
-let num;
+let gridSize;
 let cellSize;
-let colourSwitch = 2;
+let colourSwitch = 0;
 const gridContainer = document.querySelector('.grid-container');
 
 function getSize() {
-    num = parseInt(prompt("Grid size, please"));
+    gridSize = parseInt(prompt("Grid size, please"));
     gridContainer.innerHTML = "";
-    setCellSize(num);
-    gridGenerator(num);
+    setCellSize(gridSize);
+    gridGenerator(gridSize);
 }
 
-function setCellSize(num) {
-    cellSize = gridContainer.offsetWidth / num;
+function setCellSize(gridSize) {
+    cellSize = gridContainer.offsetWidth / gridSize;
 }
 
-function gridGenerator(num) {
-    for (let i = 1; i <= num ** 2; i++) {
+function gridGenerator(gridSize) {
+    for (let i = 1; i <= gridSize ** 2; i++) {
         let cell = document.createElement('div')
         cell.setAttribute('class','cell')
         cell.style.cssText += `flex: 0 ${cellSize}px;width:${cellSize}`;
@@ -59,3 +59,8 @@ function darkenCell(cell) {
         cell.style.cssText += `background-color: ${rgbDarker}`;
     }
 }
+
+function clearGrid() {
+    gridContainer.innerHTML = "";
+}    
+
