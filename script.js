@@ -1,6 +1,6 @@
 let gridSize;
 let cellSize;
-let colourSwitch = 0;
+let colourSwitch = 2;
 const gridContainer = document.querySelector('.grid-container');
 
 function getSize() {
