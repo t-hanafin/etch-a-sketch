@@ -19,7 +19,7 @@ body {
 
 .cell {
   display: flex;
-  background-color: lightblue;
+  background-color: rgb(173, 216, 230);
   align-items: center;
   justify-content: center;
   margin: 0px;
